@@ -1,0 +1,37 @@
+* cmakeでgoogle testを使うプロジェクトの雛形
+
+** build方法
+
+#+BEGIN_SRC bash
+mkdir build
+cb build
+cmake ..
+make
+# test
+ctest
+# execute main
+./src/main
+#+END_SRC
+
+** directory構造
+
+#+BEGIN_SRC
+├── CMakeLists.txt
+├── README.org
+├── src
+│   ├── CMakeLists.txt
+│   ├── lib
+│   │   ├── CMakeLists.txt
+│   │   ├── mylib.cpp
+│   │   └── mylib.hpp
+│   └── main.cpp
+└── test
+    ├── CMakeLists.txt
+    ├── gtest.cmake
+    └── mylib_test.cpp
+#+END_SRC
+
+** 参考（もといパクリ元）
+
++ [[http://qiita.com/janus_wel/items/4e6c12f9104f501104c7][ExternalProjectの例]]
++ [[http://qiita.com/kumagi/items/1c9a39db7adeaf9dd8fc][test fileの指定]]
